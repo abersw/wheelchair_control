@@ -1,13 +1,14 @@
 <launch>
-  <arg name="multi_robot_name" default=""/>
 
-  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find wheelchair_description)/urdf/wheelchair_model.urdf'" />
-  <param name="robot_description" command="$(arg urdf_file)" />
+  <arg name="model" default="$(find wheelchair_description)/urdf/wheelchair_model.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find wheelchair_description)/rviz/urdf.rviz" />
 
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-    <param name="tf_prefix" value="$(arg multi_robot_name)"/>
-  </node>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wheelchair_control)/rviz/wheelchair_gazebo_model.rviz"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
 </launch>
