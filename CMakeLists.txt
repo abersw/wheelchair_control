@@ -10,7 +10,7 @@ project(wheelchair_control)
 find_package(catkin REQUIRED COMPONENTS
   #gazebo_msgs
   #gazebo_plugins
-  gazebo_ros
+  #gazebo_ros
   roscpp
   rospy
   std_msgs
