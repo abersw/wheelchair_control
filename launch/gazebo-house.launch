@@ -22,7 +22,7 @@
   </include>
 
   <!-- urdf xml robot description loaded on the Parameter Server-->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find wheelchair_description)/urdf/wheelchair_model_lidar.urdf'" /> <!--change back to wheelchair_model.urdf for signle lidar-->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find wheelchair_description)/urdf/wheelchair_model.urdf'" /> <!--change back to wheelchair_model.urdf for signle lidar-->
 
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
