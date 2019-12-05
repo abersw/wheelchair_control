@@ -11,8 +11,8 @@
     <rosparam param="rate">10</rosparam>
     <rosparam param="base_frame_id">"base_footprint"</rosparam>
     <rosparam param="odom_frame_id">"odom"</rosparam>
-    <rosparam param="encoder_min">-32768</rosparam>
-    <rosparam param="encoder_max">32768</rosparam>
+    <!--<rosparam param="encoder_min">-32768</rosparam>
+    <rosparam param="encoder_max">32768</rosparam>-->
   </node>
 
 </launch>
