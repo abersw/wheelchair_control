@@ -18,7 +18,9 @@
   <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
     <param name="use_gui" value="true"/>
     <param name="rate" value="50"/>
+    <remap from="zed/zed_node/odom" to="odom" />
   </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find wheelchair_description)/rviz/model.rviz"/>
+  
 </launch>

@@ -1,0 +1,10 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find wheelchair_description)/urdf/wheelchair_model.urdf'" />
+  <arg name="use_tf_static" default="false"/>
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <param name="use_tf_static" value="$(arg use_tf_static)"/>
+    <remap from="/joint_states" to="/wheelchair/joint_states" />
+  </node>
+  <rosparam param="base_frame_id">"base_footprint"</rosparam>
+</launch>
