@@ -12,9 +12,9 @@
     <rosparam file="$(find wheelchair_control)/config/wheelchair_control.yaml" command="load" />
     
      <!-- Spawn controllers -->
-  <node name="wheelchair_controller_spawner" pkg="controller_manager" ns="/wheelchair_robot" type="spawner"
+  <node name="wheelchair_controller_spawner" pkg="controller_manager" type="spawner"
         args="wheelchair_controller"/>
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+<!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />-->
           
           
 </launch>
