@@ -1,3 +1,7 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+
 wheelchair_controller:
   type        : "diff_drive_controller/DiffDriveController"
   left_wheel  : 'wheelchair_base_link_left_wheel_joint'
