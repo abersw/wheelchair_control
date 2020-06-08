@@ -3,6 +3,8 @@ joint_state_controller:
   publish_rate: 100
 
 wheelchair_controller:
+  #Publish to TF directly or not
+  enable_odom_tf: false
   type        : "diff_drive_controller/DiffDriveController"
   left_wheel  : 'wheelchair_base_link_left_wheel_joint'
   right_wheel : 'wheelchair_base_link_right_wheel_joint'
@@ -48,11 +50,11 @@ wheelchair_controller:
       max_jerk               : 2.5  # rad/s^3
 
 #Publish to TF directly or not
-enable_odom_tf: true
+enable_odom_tf: false
 
 #Name of frame to publish odometry in
 #odom_frame_id: odom
-
+publish_tf: false
 # Publish the velocity command to be executed. 
 # It is to monitor the effect of limiters on the controller input.
 publish_cmd: true

@@ -55,6 +55,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
     <param name="global_costmap/height" value="100.0" if="$(arg no_static_map)"/>
 
 <remap from="cmd_vel" to="/wheelchair_controller/cmd_vel"/>
+<!-- change to= to odom for gazebo simulator-->
+<remap from="odom" to="/zed_node/odom" />
   </node>
 
 </launch>
