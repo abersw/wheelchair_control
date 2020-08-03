@@ -7,7 +7,7 @@
   </include>-->
   <arg name="multi_robot_name" default=""/>
 
-  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find wheelchair_description)/urdf/wheelchair_model.urdf'" />
+  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf'" />
   <param name="robot_description" command="$(arg urdf_file)" />
 
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
