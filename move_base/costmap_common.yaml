@@ -1,4 +1,4 @@
-footprint: [[-0.5, -0.33], [-0.5, 0.33], [0.5, 0.33], [0.5, -0.33]]
+footprint: [[-0.255, -0.36], [0.255, -0.36], [0.255, 0.36], [-0.255, 0.36]]
 footprint_padding: 0.01
 
 robot_base_frame: base_footprint
@@ -18,7 +18,7 @@ static:
 
 obstacles_laser:
     observation_sources: laser
-    laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan_filtered, inf_is_valid: true}
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan_filtered, inf_is_valid: true, min-angle: 10, max-angle: 80}
 
 inflation:
     inflation_radius: 1.0
