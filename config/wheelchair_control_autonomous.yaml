@@ -36,7 +36,7 @@ wheelchair_controller:
       max_velocity           : 0.1  # m/s  #here's the forward speed
       min_velocity           : -0.1 # m/s  #here's the back speed
       has_acceleration_limits: true
-      max_acceleration       : 0.5  # m/s^2 #rate of acceleration
+      max_acceleration       : 0.3  # m/s^2 #rate of acceleration
       min_acceleration       : -0.4 # m/s^2
       has_jerk_limits        : true
       max_jerk               : 3.0  # m/s^3 #margin of error bounce
@@ -45,7 +45,7 @@ wheelchair_controller:
       has_velocity_limits    : true
       max_velocity           : 0.2  # rad/s
       has_acceleration_limits: true
-      max_acceleration       : 0.5  # rad/s^2
+      max_acceleration       : 0.3  # rad/s^2
       has_jerk_limits        : true
       max_jerk               : 1.5  # rad/s^3
 
