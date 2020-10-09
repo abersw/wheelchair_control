@@ -33,19 +33,19 @@ wheelchair_controller:
   linear:
     x:
       has_velocity_limits    : true
-      max_velocity           : 0.4  # m/s  #here's the forward speed
-      min_velocity           : -0.4 # m/s  #here's the back speed
+      max_velocity           : 0.3  # m/s  #here's the forward speed
+      min_velocity           : -0.3 # m/s  #here's the back speed
       has_acceleration_limits: true
-      max_acceleration       : 0.3  # m/s^2 #rate of acceleration
+      max_acceleration       : 0.5  # m/s^2 #rate of acceleration
       min_acceleration       : -0.4 # m/s^2
       has_jerk_limits        : true
-      max_jerk               : 0.2  # m/s^3 #margin of error bounce
+      max_jerk               : 3.0  # m/s^3 #margin of error bounce
   angular:
     z:
       has_velocity_limits    : true
-      max_velocity           : 0.3  # rad/s
+      max_velocity           : 0.7  # rad/s
       has_acceleration_limits: true
-      max_acceleration       : 0.3  # rad/s^2
+      max_acceleration       : 0.5  # rad/s^2
       has_jerk_limits        : true
       max_jerk               : 1.5  # rad/s^3
 
