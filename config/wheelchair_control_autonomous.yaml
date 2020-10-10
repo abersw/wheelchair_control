@@ -8,7 +8,7 @@ wheelchair_controller:
   type        : "diff_drive_controller/DiffDriveController"
   left_wheel  : 'wheelchair_base_link_left_wheel_joint'
   right_wheel : 'wheelchair_base_link_right_wheel_joint'
-  publish_rate: 50.0               # default: 50
+  publish_rate: 100.0               # default: 50
   pose_covariance_diagonal : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
   twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 
@@ -43,9 +43,9 @@ wheelchair_controller:
   angular:
     z:
       has_velocity_limits    : true
-      max_velocity           : 0.7  # rad/s
+      max_velocity           : 0.5  # rad/s
       has_acceleration_limits: true
-      max_acceleration       : 0.5  # rad/s^2
+      max_acceleration       : 0.3  # rad/s^2
       has_jerk_limits        : true
       max_jerk               : 1.5  # rad/s^3
 
