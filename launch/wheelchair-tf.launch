@@ -1,19 +1,15 @@
-<!--<launch>
-  <rosparam param="ticks_meter">5520</rosparam>
-  <rosparam param="base_width">0.28</rosparam>-->
-  <!--
-  <node pkg="differential_drive" type="twist_to_motors.py" name="twist_to_motors" output="screen">
-    <rosparam param="rate">50</rosparam>
-    <rosparam param="timeout_ticks">2</rosparam>
-  </node>
--->
-  <!--<node pkg="differential_drive" type="diff_tf.py" name="diff_tf" output="screen">
-    <rosparam param="rate">10</rosparam>
-    <rosparam param="base_frame_id">"base_footprint"</rosparam>
-    <rosparam param="odom_frame_id">"odom"</rosparam>-->
-    <!--<rosparam param="encoder_min">-32768</rosparam>
-    <rosparam param="encoder_max">32768</rosparam>-->
- <!-- </node>
+<launch>
 
-</launch>-->
+  <arg name="publish_urdf" default="true" />
+  <arg name="use_tf_static" default="true" />
 
+  <group if="$(arg publish_urdf)">
+    <param name="robot_description" textfile="$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+      <param name="use_tf_static" value="$(arg use_tf_static" />
+    </node>
+  </group>
+  <rosparam param="base_frame_id">"base_footprint"</rosparam>
+
+</launch>
