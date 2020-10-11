@@ -33,28 +33,18 @@ wheelchair_controller:
   linear:
     x:
       has_velocity_limits    : true
-      max_velocity           : 0.3  # m/s  #here's the forward speed
-      min_velocity           : -0.3 # m/s  #here's the back speed
+      max_velocity           : 0.3  # m/s
+      min_velocity           : -0.5 # m/s
       has_acceleration_limits: true
-      max_acceleration       : 0.5  # m/s^2 #rate of acceleration
-      min_acceleration       : -0.4 # m/s^2
+      max_acceleration       : 0.1  # m/s^2
+      min_acceleration       : -0.1 # m/s^2
       has_jerk_limits        : true
-      max_jerk               : 3.0  # m/s^3 #margin of error bounce
+      max_jerk               : 1.0  # m/s^3
   angular:
     z:
       has_velocity_limits    : true
-      max_velocity           : 0.5  # rad/s
+      max_velocity           : 0.3  # rad/s
       has_acceleration_limits: true
-      max_acceleration       : 0.3  # rad/s^2
+      max_acceleration       : 0.5  # rad/s^2
       has_jerk_limits        : true
       max_jerk               : 1.5  # rad/s^3
-
-#Publish to TF directly or not
-enable_odom_tf: false
-
-#Name of frame to publish odometry in
-#odom_frame_id: odom
-publish_tf: false
-# Publish the velocity command to be executed. 
-# It is to monitor the effect of limiters on the controller input.
-publish_cmd: true
