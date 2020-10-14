@@ -39,7 +39,7 @@ wheelchair_controller:
       max_acceleration       : 1.0  # m/s^2
       min_acceleration       : -1.0 # m/s^2
       has_jerk_limits        : true
-      max_jerk               : 5.5  # m/s^3 #this oscillates when stopping
+      max_jerk               : 4.5  # m/s^3 #this oscillates when stopping
   angular:
     z:
       has_velocity_limits    : true
