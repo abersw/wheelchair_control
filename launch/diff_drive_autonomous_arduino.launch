@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <param name="robot_description" command="cat '$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf'" />
+
+    <node name="wheelchair_hardware_controller" pkg="wheelchair_drivers" type="wheelchair_vel_node" respawn="false" output="screen" />
+
+    <!--<node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model mybot -x $(arg x) -y $(arg y) -z $(arg z)" />-->
+          
+    <rosparam file="$(find wheelchair_control)/config/wheelchair_control_autonomous.yaml" command="load" />
+    
+     <!-- Spawn controllers for gazebo-->
+     <node name="wheelchair_controller_spawner" pkg="controller_manager" type="spawner"
+	args="wheelchair_controller"/>
+
+      <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+            <param name="port"              type="string"               value="/dev/ttyACM0"/>
+            <param name="baud"              type="int"                  value="57600"/>
+      </node>
+
+
+<!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />-->
+          
+          
+</launch>
