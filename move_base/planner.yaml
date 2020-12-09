@@ -50,6 +50,39 @@ TrajectoryPlannerROS:
   oscillation_reset_dist: 0.05 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
 
 DWAPlannerROS:
+
+  max_vel_trans: 0.1
+  min_vel_trans: 0
+
+  max_vel_x: 0.08
+  min_vel_x: -0.08
+
+  max_vel_y: 0
+  min_vel_y: 0
+
+  max_vel_theta: 1
+  min_vel_theta: 0
+
+  acc_lim_x: 1
+  acc_lim_y: 0
+
+  acc_lim_theta: 3.2
+  acc_lim_trans: 0.1
+
+  #map parameters
+  xy_goal_tolerance: 0.5
+  yaw_goal_tolerance: 0.6
+
+  trans_stopped_vel: 0.1
+  theta_stopped_vel: 0.1
+
+  sim_time: 1.7
+  sim_granularity: 0.025
+  angular_sim_granularity: 0.1
+
+  path_distance_bias: 0.6
+  goal_distance_bias: 0.8
+
   # Robot configuration parameters  
   acc_lim_x: 1.0
   acc_lim_y: 0
