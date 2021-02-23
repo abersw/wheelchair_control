@@ -1,5 +1,6 @@
 <launch>
 
+  <arg name="wheelchair_sim" default="false" />
   <arg name="publish_urdf" default="true" />
   <arg name="use_tf_static" default="true" />
 
@@ -11,5 +12,16 @@
     </node>
   </group>
   <rosparam param="base_frame_id">"base_footprint"</rosparam>
+
+  <group if="$(arg wheelchair_sim)">
+    <!--add simulation params here-->
+    <!--mobilenet camera input-->
+    <param name="/wheelchair_param/mobilenet/image_src" type="string" value="/wheelchair_robot/left_camera/image_raw" />
+  </group>
+  <group unless="$(arg wheelchair_sim)">
+    <!--add physical params here-->
+    <!--mobilenet camera input-->
+    <param name="/wheelchair_param/mobilenet/image_src" type="string" value="/zed_node/left/image_rect_color" />
+  </group>
 
 </launch>
