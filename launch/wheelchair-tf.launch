@@ -17,6 +17,7 @@
     <!--add simulation params here-->
     <!--mobilenet camera input-->
     <param name="/wheelchair_param/mobilenet/image_src" type="string" value="/wheelchair_robot/left_camera/image_raw" />
+    <!--<param name="param/mobilenet/image_src" type="string" value="/still_image_publisher/image_raw" />-->
   </group>
   <group unless="$(arg wheelchair_sim)">
     <!--add physical params here-->
