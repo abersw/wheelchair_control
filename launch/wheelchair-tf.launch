@@ -13,10 +13,14 @@
   </group>
   <rosparam param="base_frame_id">"base_footprint"</rosparam>
 
+  <!--Global parameters-->
+  <param name="/wheelchair_param/mobilenet/confidence_threshold" type="double" value="0.5" />
+
   <group if="$(arg wheelchair_sim)">
     <!--add simulation params here-->
     <!--mobilenet camera input-->
     <param name="/wheelchair_param/mobilenet/image_src" type="string" value="/wheelchair_robot/left_camera/image_raw" />
+    <!--static image publisher-->
     <!--<param name="param/mobilenet/image_src" type="string" value="/still_image_publisher/image_raw" />-->
   </group>
   <group unless="$(arg wheelchair_sim)">
