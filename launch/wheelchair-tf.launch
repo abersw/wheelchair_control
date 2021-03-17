@@ -3,6 +3,7 @@
   <arg name="wheelchair_sim" default="false" />
   <arg name="publish_urdf" default="true" />
   <arg name="use_tf_static" default="true" />
+  <param name="/use_sim_time" value="true" if="$(wheelchair_sim)" />
 
   <group if="$(arg publish_urdf)">
     <param name="robot_description" textfile="$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf" />
@@ -14,7 +15,18 @@
   <rosparam param="base_frame_id">"base_footprint"</rosparam>
 
   <!--Global parameters-->
-  <param name="/wheelchair_param/mobilenet/confidence_threshold" type="double" value="0.5" />
+  <param name="/wheelchair_robot/param/mobilenet/confidence_threshold" type="double" value="0.5" />
+
+  <!--mobilenet camera input-->
+  <remap from="/wheelchair_robot/left_camera/image_raw" to="/wheelchair_robot/sensors/left_camera" if="$(wheelchair_sim)"/>
+  <!--<remap from="/still_image_publisher/image_raw" to="/wheelchair_robot/sensors/left_camera" if="$(wheelchair_sim)"/>-->
+  <remap from="/zed_node/left/image_rect_color" to="/wheelchair_robot/sensors/left_camera" unless="$(wheelchair_sim)"/>
+
+  <!--pointcloud transformer - dacop package-->
+  <remap from="/wheelchair_robot/depth_camera/depth/points" to="/wheelchair_robot/sensors/pointcloud" if="$(wheelchair_sim)"/>
+  <remap from="/zed_node/left/image_rect_color" to="/wheelchair_robot/sensors/pointcloud" unless="$(wheelchair_sim)"/>
+
+  <remap from="/different_topic" to="/needed_topic"/>
 
   <group if="$(arg wheelchair_sim)">
     <!--add simulation params here-->
