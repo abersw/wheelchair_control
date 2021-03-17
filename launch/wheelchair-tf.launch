@@ -25,10 +25,10 @@
     <!--<param name="param/mobilenet/image_src" type="string" value="/still_image_publisher/image_raw" />-->
 
     <!--pointcloud transformer - dacop package-->
-    <param name="/wheelchair_param/pointcloud_src" type="string" value="/wheelchair_robot/depth_camera/depth/points" />
+    <param name="/wheelchair_robot/param/pointcloud_src" type="string" value="/wheelchair_robot/depth_camera/depth/points" />
 
     <!--Wheelchair cmd_vel driver-->
-    <param name="/wheelchair_param/cmd_vel" type="string" value="/wheelchair_robot/cmd_vel" />
+    <param name="/wheelchair_robot/param/cmd_vel" type="string" value="/wheelchair_robot/cmd_vel" />
 
   </group>
   <group unless="$(arg wheelchair_sim)">
@@ -37,10 +37,10 @@
     <param name="/wheelchair_robot/param/left_camera" type="string" value="/zed_node/left/image_rect_color" />
 
     <!--pointcloud transformer - dacop package-->
-    <param name="/wheelchair_param/pointcloud_src" type="string" value="/zed_node/point_cloud/cloud_registered" />
+    <param name="/wheelchair_robot/param/pointcloud_src" type="string" value="/zed_node/point_cloud/cloud_registered" />
 
     <!--Wheelchair cmd_vel driver-->
-    <param name="/wheelchair_param/cmd_vel" type="string" value="/wheelchair_controller/cmd_vel" />
+    <param name="/wheelchair_robot/param/cmd_vel" type="string" value="/wheelchair_controller/cmd_vel" />
   </group>
 
 </launch>
