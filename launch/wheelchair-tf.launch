@@ -17,6 +17,7 @@
 
   <!--Global parameters-->
   <param name="/wheelchair_robot/param/mobilenet/confidence_threshold" type="double" value="0.5" />
+  <!--<param name="/wheelchair_robot/param/user/room_name" type="string" value="null" />-->
 
   <group if="$(arg wheelchair_sim)">
     <!--add simulation params here-->
