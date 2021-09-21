@@ -3,7 +3,7 @@
 <group ns="/wheelchair_robot">
     <param name="robot_description" command="cat '$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf'" />
 
-    <node name="wheelchair_hardware_controller" pkg="wheelchair_drivers" type="wheelchair_vel_node" respawn="false" output="screen" />
+    <node ns="wheelchair_controller" name="wheelchair_hardware_controller" pkg="wheelchair_drivers" type="wheelchair_vel_node" respawn="false" output="screen" />
 
     <!--<node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
           args="-urdf -param robot_description -model mybot -x $(arg x) -y $(arg y) -z $(arg z)" />-->
