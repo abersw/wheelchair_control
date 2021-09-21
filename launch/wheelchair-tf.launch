@@ -42,7 +42,7 @@
     <param name="/wheelchair_robot/param/pointcloud" type="string" value="/wheelchair_robot/zed_node/point_cloud/cloud_registered" />
 
     <!--Wheelchair cmd_vel driver-->
-    <param name="/wheelchair_robot/param/cmd_vel" type="string" value="/wheelchair_controller/cmd_vel" />
+    <param name="/wheelchair_robot/param/cmd_vel" type="string" value="/wheelchair_robot/wheelchair_controller/cmd_vel" />
   </group>
 
 </launch>
