@@ -36,10 +36,10 @@
   <group unless="$(arg wheelchair_sim)">
     <!--add physical params here-->
     <!--mobilenet camera input-->
-    <param name="/wheelchair_robot/param/left_camera" type="string" value="/zed/zed_node/left/image_rect_color" />
+    <param name="/wheelchair_robot/param/left_camera" type="string" value="/wheelchair_robot/zed_node/left/image_rect_color" />
 
     <!--pointcloud transformer - dacop package-->
-    <param name="/wheelchair_robot/param/pointcloud" type="string" value="/zed/zed_node/point_cloud/cloud_registered" />
+    <param name="/wheelchair_robot/param/pointcloud" type="string" value="/wheelchair_robot/zed_node/point_cloud/cloud_registered" />
 
     <!--Wheelchair cmd_vel driver-->
     <param name="/wheelchair_robot/param/cmd_vel" type="string" value="/wheelchair_controller/cmd_vel" />
