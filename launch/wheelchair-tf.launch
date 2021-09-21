@@ -1,12 +1,12 @@
 <launch>
-
+  <arg name="robot_namespace" value="wheelchair_robot" />
   <arg name="wheelchair_sim" default="false" />
   <arg name="publish_urdf" default="true" />
   <arg name="use_tf_static" default="true" />
   <param name="/use_sim_time" value="true" if="$(arg wheelchair_sim)" />
   <param name="/wheelchair_robot/param/training" type="bool" value="false" />
 
-  <group if="$(arg publish_urdf)">
+  <group ns="$(arg robot_namespace)" if="$(arg publish_urdf)">
     <param name="robot_description" textfile="$(find wheelchair_description)/urdf/wheelchair_model_tof7.urdf" />
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
