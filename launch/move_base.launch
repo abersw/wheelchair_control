@@ -39,7 +39,7 @@
 
     <remap from="cmd_vel" to="/wheelchair_controller/cmd_vel" unless="$(arg publish_urdf)" />
     <!-- change to= to odom for gazebo simulator-->
-    <remap from="odom" to="/zed_node/odom" unless="$(arg publish_urdf)" />
+    <remap from="odom" to="/zed/zed_node/odom" unless="$(arg publish_urdf)" />
 
     <remap from="cmd_vel" to="/wheelchair_robot/cmd_vel" if="$(arg wheelchair_sim)" />
     <!-- change to= to odom for gazebo simulator-->
